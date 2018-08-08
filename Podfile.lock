@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - OCMock (3.4.2)
   - ReactiveObjC (3.1.0)
   - Realm (3.7.5):
     - Realm/Headers (= 3.7.5)
@@ -24,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - OCMock (~> 3.4.2)
   - ReactiveObjC (~> 3.1.0)
   - Realm (~> 3.7.5)
   - Realm/Headers (~> 3.7.5)
@@ -32,16 +34,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - OCMock
     - ReactiveObjC
     - Realm
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  OCMock: ebe9ee1dca7fbed0ff9193ac0b3e2d8862ea56f6
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 5ec1315885f31a5d55f5d77a0d404435071a013d
+PODFILE CHECKSUM: 9b9528f6a34b898cb199a692cf14f7389f5e1e81
 
 COCOAPODS: 1.5.3

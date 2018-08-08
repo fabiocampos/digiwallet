@@ -14,12 +14,15 @@ target 'Digiwallet' do
   target 'DigiwalletTests' do
     inherit! :search_paths
     pod 'Realm/Headers', '~> 3.7.5'
+    pod 'OCMock', '~> 3.4.2'
+    pod 'Expecta', '~> 1.0'
     # Pods for testing
   end
 
   target 'DigiwalletUITests' do
     inherit! :search_paths
     pod 'Realm/Headers', '~> 3.7.5'
+
     # Pods for testing
   end
 

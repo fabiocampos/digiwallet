@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UserViewModel.h"
 #import "LoginViewController.h"
+#import "LoginService.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) UserViewModel *userViewModel;
@@ -29,7 +30,7 @@
 }
 
 - (UIViewController *)createInitialViewController {
-    self.userViewModel = [[UserViewModel alloc] init];
+    self.userViewModel = [[UserViewModel alloc] initWithService:[[LoginService alloc] init]];
     LoginViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     return [viewController initWithViewModel:self.userViewModel];
 }
@@ -58,8 +59,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
 }
 
 @end

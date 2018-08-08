@@ -15,7 +15,7 @@
 		B8B596A52115F881003B1480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8B596A42115F881003B1480 /* Assets.xcassets */; };
 		B8B596A82115F881003B1480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B596A62115F881003B1480 /* LaunchScreen.storyboard */; };
 		B8B596AB2115F881003B1480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596AA2115F881003B1480 /* main.m */; };
-		B8B596B52115F882003B1480 /* DigiwalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596B42115F882003B1480 /* DigiwalletTests.m */; };
+		B8B596B52115F882003B1480 /* UserViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596B42115F882003B1480 /* UserViewModelTests.m */; };
 		B8B596C02115F882003B1480 /* DigiwalletUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596BF2115F882003B1480 /* DigiwalletUITests.m */; };
 		B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D021162CAC003B1480 /* UserViewModel.m */; };
 		B8B596D621162E48003B1480 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D521162E48003B1480 /* LoginViewController.m */; };
@@ -65,7 +65,7 @@
 		B8B596A92115F881003B1480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B596AA2115F881003B1480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8B596B02115F882003B1480 /* DigiwalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiwalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8B596B42115F882003B1480 /* DigiwalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigiwalletTests.m; sourceTree = "<group>"; };
+		B8B596B42115F882003B1480 /* UserViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModelTests.m; sourceTree = "<group>"; };
 		B8B596B62115F882003B1480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B596BB2115F882003B1480 /* DigiwalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiwalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B596BF2115F882003B1480 /* DigiwalletUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigiwalletUITests.m; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		B8B596B32115F882003B1480 /* DigiwalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				B8B596B42115F882003B1480 /* DigiwalletTests.m */,
+				B8B596B42115F882003B1480 /* UserViewModelTests.m */,
 				B8B596B62115F882003B1480 /* Info.plist */,
 			);
 			path = DigiwalletTests;
@@ -454,7 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8B596B52115F882003B1480 /* DigiwalletTests.m in Sources */,
+				B8B596B52115F882003B1480 /* UserViewModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 #import <ReactiveObjC.h>
 #import "User.h"
+#import "LoginService.h"
 @interface UserViewModel : NSObject
 
 @property (strong, nonatomic) NSError *error;
@@ -14,5 +15,6 @@
 @property (strong, nonatomic) NSString *password;
 @property (strong, nonatomic) RACCommand *executeLogin;
 @property (strong, nonatomic) User *loggedInUser;
-
+@property (strong, nonatomic) LoginService *loginService;
+- (instancetype)initWithService:(LoginService *)loginService;
 @end
