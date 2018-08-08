@@ -7,16 +7,35 @@
 //
 
 #import "ViewController.h"
+#import <ReactiveObjC.h>
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    RACSignal *usernameSourceSignal =
+    self.self.moneyTextField.rac_textSignal;
+    
+    RACSignal *filteredUsername = [usernameSourceSignal
+                                   filter:^BOOL(id value) {
+                                       NSString *text = value;
+                                       return text.length > 3;
+                                   }];
+    
+    [filteredUsername subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    
+//    [self.moneyTextField.rac_textSignal subscribeNext:^(id x) {
+//        NSLog(@"%@", x);
+//    }];
+    
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BA653211932EA0049C9AE /* CryptoUtils.m */; };
 		B8B5969A2115F871003B1480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596992115F871003B1480 /* AppDelegate.m */; };
 		B8B5969D2115F871003B1480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B5969C2115F871003B1480 /* ViewController.m */; };
 		B8B596A02115F871003B1480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B5969E2115F871003B1480 /* Main.storyboard */; };
@@ -16,6 +17,13 @@
 		B8B596AB2115F881003B1480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596AA2115F881003B1480 /* main.m */; };
 		B8B596B52115F882003B1480 /* DigiwalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596B42115F882003B1480 /* DigiwalletTests.m */; };
 		B8B596C02115F882003B1480 /* DigiwalletUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596BF2115F882003B1480 /* DigiwalletUITests.m */; };
+		B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D021162CAC003B1480 /* UserViewModel.m */; };
+		B8B596D621162E48003B1480 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D521162E48003B1480 /* LoginViewController.m */; };
+		B8F2562B211762890008C00C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2562A211762890008C00C /* User.m */; };
+		B8F2562F211796880008C00C /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2562E211796880008C00C /* LoginService.m */; };
+		C5313A10925AB40FE358CB7C /* libPods-Digiwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A55BA7401B203B4AC583254 /* libPods-Digiwallet.a */; };
+		D78F7959F1473C873D030A3C /* libPods-DigiwalletTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6E1DBD9B8D4BD444CE9844 /* libPods-DigiwalletTests.a */; };
+		E248BDC47946D4D425277479 /* libPods-DigiwalletUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F50C03B7871D0B41E6A0D42A /* libPods-DigiwalletUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0176B335DE9B62022237ACE3 /* Pods-Digiwallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digiwallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digiwallet/Pods-Digiwallet.debug.xcconfig"; sourceTree = "<group>"; };
+		0D6E1DBD9B8D4BD444CE9844 /* libPods-DigiwalletTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigiwalletTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EC8378AEFED9B53DBED3292 /* Pods-DigiwalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletTests/Pods-DigiwalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A55BA7401B203B4AC583254 /* libPods-Digiwallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Digiwallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7006ADFFFA6CDE78131D4DAB /* Pods-Digiwallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digiwallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digiwallet/Pods-Digiwallet.release.xcconfig"; sourceTree = "<group>"; };
+		818081047FC078246C4CE245 /* Pods-DigiwalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletTests/Pods-DigiwalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		9DAA8DD9BD897E111C39C5BF /* Pods-DigiwalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletUITests/Pods-DigiwalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B87BA652211932EA0049C9AE /* CryptoUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoUtils.h; sourceTree = "<group>"; };
+		B87BA653211932EA0049C9AE /* CryptoUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoUtils.m; sourceTree = "<group>"; };
 		B8B596952115F870003B1480 /* Digiwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digiwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B596982115F871003B1480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8B596992115F871003B1480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +70,16 @@
 		B8B596BB2115F882003B1480 /* DigiwalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigiwalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B596BF2115F882003B1480 /* DigiwalletUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigiwalletUITests.m; sourceTree = "<group>"; };
 		B8B596C12115F882003B1480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8B596D021162CAC003B1480 /* UserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
+		B8B596D221162CBE003B1480 /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
+		B8B596D421162E48003B1480 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B8B596D521162E48003B1480 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B8F25629211762890008C00C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B8F2562A211762890008C00C /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B8F2562D211796880008C00C /* LoginService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		B8F2562E211796880008C00C /* LoginService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
+		C8D4C3B75E1D21956CE5763D /* Pods-DigiwalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletUITests/Pods-DigiwalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F50C03B7871D0B41E6A0D42A /* libPods-DigiwalletUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigiwalletUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5313A10925AB40FE358CB7C /* libPods-Digiwallet.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D78F7959F1473C873D030A3C /* libPods-DigiwalletTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +103,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E248BDC47946D4D425277479 /* libPods-DigiwalletUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48CECE3918A1BF40B9ECC11C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0176B335DE9B62022237ACE3 /* Pods-Digiwallet.debug.xcconfig */,
+				7006ADFFFA6CDE78131D4DAB /* Pods-Digiwallet.release.xcconfig */,
+				3EC8378AEFED9B53DBED3292 /* Pods-DigiwalletTests.debug.xcconfig */,
+				818081047FC078246C4CE245 /* Pods-DigiwalletTests.release.xcconfig */,
+				9DAA8DD9BD897E111C39C5BF /* Pods-DigiwalletUITests.debug.xcconfig */,
+				C8D4C3B75E1D21956CE5763D /* Pods-DigiwalletUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B87BA651211932C20049C9AE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B87BA652211932EA0049C9AE /* CryptoUtils.h */,
+				B87BA653211932EA0049C9AE /* CryptoUtils.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B8B5968C2115F870003B1480 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +139,8 @@
 				B8B596B32115F882003B1480 /* DigiwalletTests */,
 				B8B596BE2115F882003B1480 /* DigiwalletUITests */,
 				B8B596962115F870003B1480 /* Products */,
+				48CECE3918A1BF40B9ECC11C /* Pods */,
+				F016EE3090622A881CABC88E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +157,11 @@
 		B8B596972115F870003B1480 /* Digiwallet */ = {
 			isa = PBXGroup;
 			children = (
+				B87BA651211932C20049C9AE /* Helper */,
+				B8F2562C2117659A0008C00C /* Services */,
+				B8B596CF21162B27003B1480 /* View */,
+				B8B596CE21162B1E003B1480 /* Model */,
+				B8B596CD21162ABB003B1480 /* ViewModel */,
 				B8B596982115F871003B1480 /* AppDelegate.h */,
 				B8B596992115F871003B1480 /* AppDelegate.m */,
 				B8B5969B2115F871003B1480 /* ViewController.h */,
@@ -135,6 +194,60 @@
 			path = DigiwalletUITests;
 			sourceTree = "<group>";
 		};
+		B8B596CD21162ABB003B1480 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8B596D021162CAC003B1480 /* UserViewModel.m */,
+				B8B596D221162CBE003B1480 /* UserViewModel.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B8B596CE21162B1E003B1480 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8F25629211762890008C00C /* User.h */,
+				B8F2562A211762890008C00C /* User.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8B596CF21162B27003B1480 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8B596D321162E04003B1480 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8B596D321162E04003B1480 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B8B596D421162E48003B1480 /* LoginViewController.h */,
+				B8B596D521162E48003B1480 /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B8F2562C2117659A0008C00C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8F2562D211796880008C00C /* LoginService.h */,
+				B8F2562E211796880008C00C /* LoginService.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F016EE3090622A881CABC88E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A55BA7401B203B4AC583254 /* libPods-Digiwallet.a */,
+				0D6E1DBD9B8D4BD444CE9844 /* libPods-DigiwalletTests.a */,
+				F50C03B7871D0B41E6A0D42A /* libPods-DigiwalletUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B596C42115F882003B1480 /* Build configuration list for PBXNativeTarget "Digiwallet" */;
 			buildPhases = (
+				571E11D2A881FF22BE7D03CC /* [CP] Check Pods Manifest.lock */,
 				B8B596912115F870003B1480 /* Sources */,
 				B8B596922115F870003B1480 /* Frameworks */,
 				B8B596932115F870003B1480 /* Resources */,
@@ -159,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B596C72115F882003B1480 /* Build configuration list for PBXNativeTarget "DigiwalletTests" */;
 			buildPhases = (
+				B96F98D687DC7FEFB78A5E09 /* [CP] Check Pods Manifest.lock */,
 				B8B596AC2115F882003B1480 /* Sources */,
 				B8B596AD2115F882003B1480 /* Frameworks */,
 				B8B596AE2115F882003B1480 /* Resources */,
@@ -177,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8B596CA2115F882003B1480 /* Build configuration list for PBXNativeTarget "DigiwalletUITests" */;
 			buildPhases = (
+				A1CA3876CF32843A6BF651BD /* [CP] Check Pods Manifest.lock */,
 				B8B596B72115F882003B1480 /* Sources */,
 				B8B596B82115F882003B1480 /* Frameworks */,
 				B8B596B92115F882003B1480 /* Resources */,
@@ -260,15 +376,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		571E11D2A881FF22BE7D03CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Digiwallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1CA3876CF32843A6BF651BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigiwalletUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B96F98D687DC7FEFB78A5E09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigiwalletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8B596912115F870003B1480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */,
+				B8F2562B211762890008C00C /* User.m in Sources */,
 				B8B596A32115F871003B1480 /* Digiwallet.xcdatamodeld in Sources */,
+				B8F2562F211796880008C00C /* LoginService.m in Sources */,
+				B8B596D621162E48003B1480 /* LoginViewController.m in Sources */,
 				B8B5969D2115F871003B1480 /* ViewController.m in Sources */,
 				B8B596AB2115F881003B1480 /* main.m in Sources */,
 				B8B5969A2115F871003B1480 /* AppDelegate.m in Sources */,
+				B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +613,7 @@
 		};
 		B8B596C52115F882003B1480 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0176B335DE9B62022237ACE3 /* Pods-Digiwallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,7 +622,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.green.Digiwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.green.digiwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,6 +630,7 @@
 		};
 		B8B596C62115F882003B1480 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7006ADFFFA6CDE78131D4DAB /* Pods-Digiwallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -459,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.green.Digiwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.green.digiwallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,6 +647,7 @@
 		};
 		B8B596C82115F882003B1480 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC8378AEFED9B53DBED3292 /* Pods-DigiwalletTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -485,6 +666,7 @@
 		};
 		B8B596C92115F882003B1480 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 818081047FC078246C4CE245 /* Pods-DigiwalletTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +685,7 @@
 		};
 		B8B596CB2115F882003B1480 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DAA8DD9BD897E111C39C5BF /* Pods-DigiwalletUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DigiwalletUITests/Info.plist;
@@ -520,6 +703,7 @@
 		};
 		B8B596CC2115F882003B1480 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8D4C3B75E1D21956CE5763D /* Pods-DigiwalletUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DigiwalletUITests/Info.plist;
