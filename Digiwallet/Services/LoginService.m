@@ -9,11 +9,13 @@
 #import "User.h"
 #import "CryptoUtils.h"
 #import "LoginService.h"
+#import "BitcoinApi.h"
 
 @implementation LoginService
 
 - (RACSignal*)loginWithEmail:(NSString *)email andPassword:(NSString *)password{
     return [RACSignal createSignal:^RACDisposable *(id subscriber) {
+
         User *user;
         user = [User findUser:email];
         if(user != nil && ![user.auth isEqualToString:[CryptoUtils toSha256:password]]){
