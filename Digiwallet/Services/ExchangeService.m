@@ -8,12 +8,23 @@
 
 #import "ExchangeService.h"
 #import "BitcoinApi.h"
+@interface ExchangeService ()
+
+@end
+
 @implementation ExchangeService
+
+- (instancetype)initWithApi:(BitcoinApi *)bitcoinApi {
+    self = [super init];
+    if (self ) {
+        _bitcoinApi = bitcoinApi;
+    }
+    return self;
+}
 
 - (RACSignal *) getBitcoinPrice {
     return [RACSignal createSignal:^RACDisposable *(id subscriber) {
-        
-        [[[BitcoinApi alloc] init] getBitcoinCotationWithSuccess:^(BitcoinPrice *bitCointPrice) {
+        [self.bitcoinApi getBitcoinCotationWithSuccess:^(BitcoinPrice *bitCointPrice) {
             NSLog(@"Recuperando cotação bitcoin %@", bitCointPrice.sellValue);
             [subscriber sendNext:bitCointPrice];
             [subscriber sendCompleted];
@@ -22,9 +33,9 @@
             [subscriber sendError:err];
             [subscriber sendCompleted];
         }];
-        
-       
+    
         return nil;
     }];
 }
+
 @end

@@ -8,20 +8,45 @@
 
 #import "ExchangeViewController.h"
 #import <UIKit/UIKit.h>
-#import "ExchangeViewModel.h"
+#import "BitcoinApi.h"
+#import "CoinTableViewCell.h"
 
-@interface ExchangeViewController()
-@property (weak, nonatomic) ExchangeViewModel *viewModel;
+@interface ExchangeViewController() <UITableViewDataSource, UITableViewDelegate>
+
 @end
 
 @implementation ExchangeViewController
-- (instancetype)initWithViewModel:(ExchangeViewModel *)viewModel {
-    if (self ) {
-        _viewModel = viewModel;
-    }else{
-        self = [super init];
-        _viewModel = viewModel;
-    }
-    return self;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.coinTableView.dataSource = self;
+    self.coinTableView.delegate = self;
+
+}
+
++(ExchangeViewModel *)createViewModel {
+    BitcoinApi *bitcoinApi = [[BitcoinApi alloc] init];
+    ExchangeService *exchangeService = [[ExchangeService alloc] initWithApi:bitcoinApi];
+    ExchangeViewModel *viewModel = [[ExchangeViewModel alloc] initWithServices:exchangeService];
+    
+    return viewModel;
+}
+#pragma TableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 150;
+}
+#pragma TableViewDataSource
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    CoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CoinData"];
+    [cell.buyValue setText:@"R$ 66,60"];
+    [cell.sellValue setText:@"R$ 50,50"];
+
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
 }
 @end

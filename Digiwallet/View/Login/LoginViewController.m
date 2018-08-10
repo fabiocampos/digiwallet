@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "ExchangeViewController.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
@@ -60,7 +61,8 @@
     }];
     
     [[RACObserve(self.viewModel, loggedInUser) ignore:nil] subscribeNext:^(User* user) {
-            [self.loginButton setTitle:@"Sucesso" forState:UIControlStateNormal];
+        [self.loginButton setTitle:@"Sucesso" forState:UIControlStateNormal];
+        [self performSegueWithIdentifier:@"Home" sender:self];
     }];
     
 }
@@ -70,14 +72,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"Home"])
+    {
+        UITabBarController *tabViewController = segue.destinationViewController;
+        ExchangeViewController *viewController = [[tabViewController viewControllers] objectAtIndex:0];
+        viewController.viewModel = [ExchangeViewController createViewModel];
+    }
 }
-*/
 
 @end

@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveObjC.h>
+#import "BitcoinApi.h"
 @interface ExchangeService : NSObject
+@property (strong, nonatomic) BitcoinApi *bitcoinApi;
+- (instancetype)initWithApi:(BitcoinApi *)bitcoinApi;
 - (RACSignal *) getBitcoinPrice;
 @end
 

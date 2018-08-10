@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ExchangeViewModel.h"
 @interface ExchangeViewController : UIViewController
-- (instancetype)initWithViewModel:(ExchangeViewModel *)viewModel;
+@property (weak, nonatomic) IBOutlet UITableView *coinTableView;
+@property (strong, nonatomic) ExchangeViewModel *viewModel;
+@property (weak, nonatomic) IBOutlet UILabel *availableAmount;
++(ExchangeViewModel *)createViewModel;
 @end
