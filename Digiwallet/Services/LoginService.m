@@ -9,7 +9,6 @@
 #import "User.h"
 #import "CryptoUtils.h"
 #import "LoginService.h"
-#import "BitcoinApi.h"
 
 @implementation LoginService
 

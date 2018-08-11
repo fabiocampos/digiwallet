@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		B868491F211A9B9F000D82C1 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B868491E211A9B9F000D82C1 /* ExchangeViewController.m */; };
 		B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8684922211A9BE7000D82C1 /* BitcoinApi.m */; };
-		B8684929211A9EB5000D82C1 /* BitcoinPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = B8684928211A9EB5000D82C1 /* BitcoinPrice.m */; };
 		B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B874E935211D46460087F691 /* CoinTableViewCell.m */; };
 		B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BA653211932EA0049C9AE /* CryptoUtils.m */; };
 		B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */; };
 		B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F53211BD7510061BAA0 /* ExchangeService.m */; };
+		B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC8305211F1FE8005FB9B4 /* BritaApi.m */; };
+		B8AC830C211F2F0B005FB9B4 /* CoinPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC830B211F2F0B005FB9B4 /* CoinPrice.m */; };
 		B8B5969A2115F871003B1480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596992115F871003B1480 /* AppDelegate.m */; };
 		B8B5969D2115F871003B1480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B5969C2115F871003B1480 /* ViewController.m */; };
 		B8B596A02115F871003B1480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8B5969E2115F871003B1480 /* Main.storyboard */; };
@@ -61,8 +62,6 @@
 		B868491E211A9B9F000D82C1 /* ExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
 		B8684921211A9BE7000D82C1 /* BitcoinApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitcoinApi.h; sourceTree = "<group>"; };
 		B8684922211A9BE7000D82C1 /* BitcoinApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitcoinApi.m; sourceTree = "<group>"; };
-		B8684927211A9EB5000D82C1 /* BitcoinPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitcoinPrice.h; sourceTree = "<group>"; };
-		B8684928211A9EB5000D82C1 /* BitcoinPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BitcoinPrice.m; sourceTree = "<group>"; };
 		B874E934211D46460087F691 /* CoinTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinTableViewCell.h; sourceTree = "<group>"; };
 		B874E935211D46460087F691 /* CoinTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinTableViewCell.m; sourceTree = "<group>"; };
 		B87BA652211932EA0049C9AE /* CryptoUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoUtils.h; sourceTree = "<group>"; };
@@ -71,6 +70,10 @@
 		B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewModel.m; sourceTree = "<group>"; };
 		B8AB0F52211BD7510061BAA0 /* ExchangeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeService.h; sourceTree = "<group>"; };
 		B8AB0F53211BD7510061BAA0 /* ExchangeService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeService.m; sourceTree = "<group>"; };
+		B8AC8304211F1FE8005FB9B4 /* BritaApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BritaApi.h; sourceTree = "<group>"; };
+		B8AC8305211F1FE8005FB9B4 /* BritaApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BritaApi.m; sourceTree = "<group>"; };
+		B8AC830A211F2F0B005FB9B4 /* CoinPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinPrice.h; sourceTree = "<group>"; };
+		B8AC830B211F2F0B005FB9B4 /* CoinPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinPrice.m; sourceTree = "<group>"; };
 		B8B596952115F870003B1480 /* Digiwallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digiwallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B596982115F871003B1480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8B596992115F871003B1480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 			children = (
 				B8684921211A9BE7000D82C1 /* BitcoinApi.h */,
 				B8684922211A9BE7000D82C1 /* BitcoinApi.m */,
+				B8AC8304211F1FE8005FB9B4 /* BritaApi.h */,
+				B8AC8305211F1FE8005FB9B4 /* BritaApi.m */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -273,8 +278,8 @@
 			children = (
 				B8F25629211762890008C00C /* User.h */,
 				B8F2562A211762890008C00C /* User.m */,
-				B8684927211A9EB5000D82C1 /* BitcoinPrice.h */,
-				B8684928211A9EB5000D82C1 /* BitcoinPrice.m */,
+				B8AC830A211F2F0B005FB9B4 /* CoinPrice.h */,
+				B8AC830B211F2F0B005FB9B4 /* CoinPrice.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,15 +514,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */,
+				B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */,
 				B8F2562B211762890008C00C /* User.m in Sources */,
 				B8B596A32115F871003B1480 /* Digiwallet.xcdatamodeld in Sources */,
 				B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */,
-				B8684929211A9EB5000D82C1 /* BitcoinPrice.m in Sources */,
 				B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */,
 				B868491F211A9B9F000D82C1 /* ExchangeViewController.m in Sources */,
 				B8F2562F211796880008C00C /* LoginService.m in Sources */,
 				B8B596D621162E48003B1480 /* LoginViewController.m in Sources */,
 				B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */,
+				B8AC830C211F2F0B005FB9B4 /* CoinPrice.m in Sources */,
 				B8B5969D2115F871003B1480 /* ViewController.m in Sources */,
 				B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */,
 				B8B596AB2115F881003B1480 /* main.m in Sources */,

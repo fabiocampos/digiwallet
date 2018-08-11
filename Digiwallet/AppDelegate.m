@@ -10,6 +10,7 @@
 #import "UserViewModel.h"
 #import "LoginViewController.h"
 #import "LoginService.h"
+#import "User.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) UserViewModel *userViewModel;
@@ -33,6 +34,10 @@
     self.userViewModel = [[UserViewModel alloc] initWithService:[[LoginService alloc] init]];
     LoginViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"];
     return [viewController initWithViewModel:self.userViewModel];
+}
+
+- (User *)getCurrentUser {
+    return self.userViewModel.loggedInUser;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

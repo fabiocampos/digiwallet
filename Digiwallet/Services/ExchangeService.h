@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveObjC.h>
 #import "BitcoinApi.h"
+#import "BritaApi.h"
+#import "User.h"
 @interface ExchangeService : NSObject
 @property (strong, nonatomic) BitcoinApi *bitcoinApi;
-- (instancetype)initWithApi:(BitcoinApi *)bitcoinApi;
+@property (strong, nonatomic) BritaApi *britaApi;
+- (instancetype)initWithBitcoinApi:(BitcoinApi *)bitcoinApi andBritaApi:(BritaApi *)britaApi;
 - (RACSignal *) getBitcoinPrice;
+- (RACSignal *) getBritaPrice;
+- (RACSignal *) buyBitcoinforUser:(User *)user;
 @end
 

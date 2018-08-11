@@ -7,13 +7,15 @@
 //
 
 #import <ReactiveObjC.h>
-#import "BitcoinPrice.h"
+#import "CoinPrice.h"
 #import "ExchangeService.h"
 @interface ExchangeViewModel : NSObject
 
 @property (strong, nonatomic) NSError *error;
-@property (strong, nonatomic) RACCommand *executeGetBitCoinPrice;
-@property (strong, nonatomic) BitcoinPrice *bitcoinPrice;
+@property (strong, nonatomic) NSMutableArray<CoinPrice *> *coinPrices;
 @property (strong, nonatomic) ExchangeService *exchangeService;
+@property (strong, nonatomic) User *currentUser;
 - (instancetype)initWithServices:(ExchangeService *)exchangeService;
+- (RACSignal *)executeGetBitcoinPriceSignal;
+- (RACSignal *)executeGetBritaPriceSignal;
 @end

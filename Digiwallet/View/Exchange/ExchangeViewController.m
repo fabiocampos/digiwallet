@@ -9,7 +9,9 @@
 #import "ExchangeViewController.h"
 #import <UIKit/UIKit.h>
 #import "BitcoinApi.h"
+#import "BritaApi.h"
 #import "CoinTableViewCell.h"
+#import "AppDelegate.h"
 
 @interface ExchangeViewController() <UITableViewDataSource, UITableViewDelegate>
 
@@ -19,16 +21,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
 
     self.coinTableView.dataSource = self;
     self.coinTableView.delegate = self;
+
+    [[self.viewModel executeGetBritaPriceSignal] subscribeNext:^(id  _Nullable x) {
+        [self.coinTableView reloadData];
+        [[self.viewModel executeGetBitcoinPriceSignal] subscribeNext:^(id  _Nullable x) {
+          [self.coinTableView reloadData];
+        }];
+    }];
+
+    
 
 }
 
 +(ExchangeViewModel *)createViewModel {
     BitcoinApi *bitcoinApi = [[BitcoinApi alloc] init];
-    ExchangeService *exchangeService = [[ExchangeService alloc] initWithApi:bitcoinApi];
+    BritaApi *britaApi = [[BritaApi alloc] init];
+    ExchangeService *exchangeService = [[ExchangeService alloc] initWithBitcoinApi:bitcoinApi andBritaApi:britaApi];
     ExchangeViewModel *viewModel = [[ExchangeViewModel alloc] initWithServices:exchangeService];
+    AppDelegate *appDelegate = (AppDelegate*) [UIApplication sharedApplication].delegate;
+    viewModel.currentUser = [appDelegate getCurrentUser];
     
     return viewModel;
 }
@@ -47,6 +64,6 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return [self.viewModel.coinPrices count];
 }
 @end

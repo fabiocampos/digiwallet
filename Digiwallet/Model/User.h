@@ -13,6 +13,8 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *auth;
 @property (strong, nonatomic) NSNumber<RLMFloat> *balance;
+@property (strong, nonatomic) NSNumber<RLMFloat> *bitcoinBalance;
+@property (strong, nonatomic) NSNumber<RLMFloat> *britaBalance;
 
 + (User*)createUser:(NSString *)email withPassword:(NSString *)password;
 + (User*)findUser:(NSString *)email;

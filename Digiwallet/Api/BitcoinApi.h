@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
-#import "BitcoinPrice.h"
+#import "CoinPrice.h"
 
 
 @interface BitcoinApi : NSObject
-- (void)getBitcoinCotationWithSuccess:(void (^)(BitcoinPrice *bitCointPrice))success
+- (void)getBitcoinCotationWithSuccess:(void (^)(CoinPrice *bitcoinPrice))success
                         failure:(void (^)(NSError *err))failure;
 @end
