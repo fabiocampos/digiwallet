@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 typedef enum CoinTypes : NSUInteger {
     kBrita,
-    kBitcoin
+    kBitcoin,
+    kBRL
 } CoinTypes;
 
 @interface CoinPrice : NSObject
 @property (strong, nonatomic) NSNumber  *buyValue;
 @property (strong, nonatomic) NSNumber  *sellValue;
 @property enum CoinTypes type;
+@property (strong, nonatomic) NSString  *name;
 @end

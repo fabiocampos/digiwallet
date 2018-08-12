@@ -18,4 +18,6 @@
 - (instancetype)initWithServices:(ExchangeService *)exchangeService;
 - (RACSignal *)executeGetBitcoinPriceSignal;
 - (RACSignal *)executeGetBritaPriceSignal;
+- (CoinPrice *)getDisplayableUserCoin;
+- (void)cycleUserCoin;
 @end

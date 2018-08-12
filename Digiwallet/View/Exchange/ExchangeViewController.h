@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *coinTableView;
 @property (strong, nonatomic) ExchangeViewModel *viewModel;
 @property (weak, nonatomic) IBOutlet UILabel *availableAmount;
+@property (weak, nonatomic) IBOutlet UILabel *availableAmountName;
 +(ExchangeViewModel *)createViewModel;
 @end

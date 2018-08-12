@@ -13,7 +13,7 @@
 @end
 
 @implementation ExchangeViewModel 
-    
+int displayableUserCoinIndex = 0;
 - (instancetype)initWithServices:(ExchangeService *)exchangeService {
     self = [super init];
     if (self ) {
@@ -34,7 +34,7 @@
     return self;
 }
 
-- (RACSignal *)executeGetBitcoinPriceSignal {
+- (RACSignal *)executeGetBitcoinPriceSignal{
     return [[[self.exchangeService getBitcoinPrice]
              doNext:^(CoinPrice *bitcoinPrice) {
                  self.error = nil;
@@ -58,4 +58,34 @@
             }] ;
 }
 
+- (CoinPrice *)getDisplayableUserCoin{
+     CoinPrice *coin = [[CoinPrice alloc] init];
+    switch (displayableUserCoinIndex) {
+        case 0:
+            coin.sellValue = _currentUser.balance;
+            coin.type = kBRL;
+            coin.name = @"Reais";
+            break;
+        case 1:
+            coin.sellValue = _currentUser.britaBalance;
+            coin.type = kBrita;
+            coin.name = @"Brita";
+            break;
+        case 2:
+            coin.sellValue = _currentUser.bitcoinBalance;
+            coin.type = kBitcoin;
+            coin.name = @"Bitcoin";
+            break;
+        default:
+            break;
+    }
+    return coin;
+}
+- (void)cycleUserCoin {
+    if(displayableUserCoinIndex < 2){
+        displayableUserCoinIndex++;
+    }else{
+        displayableUserCoinIndex = 0;
+    }
+}
 @end

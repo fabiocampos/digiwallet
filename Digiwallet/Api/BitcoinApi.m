@@ -19,6 +19,7 @@
         bitcoinPrice.buyValue = responseObject[@"ticker"][@"buy"];
         bitcoinPrice.sellValue = responseObject[@"ticker"][@"sell"];
         bitcoinPrice.type = kBitcoin;
+        bitcoinPrice.name = @"Bitcoin";
         success(bitcoinPrice);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           NSLog(@"Request Failed with Error: %@, %@", error, error.userInfo);

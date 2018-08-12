@@ -18,5 +18,6 @@
 - (RACSignal *) getBitcoinPrice;
 - (RACSignal *) getBritaPrice;
 - (RACSignal *) buyBitcoinforUser:(User *)user;
+- (RACSignal *) sellCoin:(CoinPrice*)coinPrice forUser:(User *)user;
 @end
 

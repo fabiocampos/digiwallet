@@ -40,6 +40,7 @@ NSString *const DAILY_COTATION_ENDPOINT = @"CotacaoDolarDia(dataCotacao=@dataCot
             britaPrice.buyValue = responseObject[@"value"][0][@"cotacaoCompra"];
             britaPrice.sellValue = responseObject[@"value"][0][@"cotacaoVenda"];
             britaPrice.type = kBrita;
+            britaPrice.name = @"Brita";
             success(britaPrice);
             
         }else{

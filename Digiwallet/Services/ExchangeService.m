@@ -7,8 +7,7 @@
 //
 
 #import "ExchangeService.h"
-
-
+#import "FSError.h"
 @interface ExchangeService ()
 
 @end
@@ -61,5 +60,39 @@
         return nil;
     }];
 }
+- (RACSignal *) sellCoin:(CoinPrice*)coinPrice forUser:(User *)user{
+        switch (coinPrice.type) {
+            case kBrita:
+                return [self sellBrita:coinPrice forUser:user];
+                break;
+                
+            default:
+                break;
+        }
+        return nil;
+}
 
+- (RACSignal *) sellBrita:(CoinPrice*)coinPrice forUser:(User *)user {
+    return [RACSignal createSignal:^RACDisposable *(id subscriber) {
+        NSNumber *britaBalance = user.britaBalance;
+        if([coinPrice sellValue] < britaBalance){
+            NSLog(@"Not enougth britas");
+            [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSNotEnoughtMoney userInfo:nil] ];
+            [subscriber sendCompleted];
+        }else{
+            [self.britaApi getBritaCotationWithSuccess:^(CoinPrice *britaPrice) {
+                float brlBalance = [britaPrice.sellValue floatValue] + [user.balance floatValue] ;
+              //  user.balance = [NSNumber numberWithFloat:brlBalance]
+                NSLog(@"New user balance %.05f", brlBalance);
+                [subscriber sendNext:user.balance];
+                [subscriber sendCompleted];
+            } failure:^(NSError *err) {
+                NSLog(@"Brita value recover error");
+                [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSBrokerNotAvailable userInfo:nil] ];
+                [subscriber sendCompleted];
+            }];
+        }
+        return nil;
+    }];
+}
 @end

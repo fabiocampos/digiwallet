@@ -11,6 +11,8 @@
 		B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8684922211A9BE7000D82C1 /* BitcoinApi.m */; };
 		B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B874E935211D46460087F691 /* CoinTableViewCell.m */; };
 		B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BA653211932EA0049C9AE /* CryptoUtils.m */; };
+		B88521F12120818D0085739C /* FSError.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F02120818D0085739C /* FSError.m */; };
+		B88521F42120E0370085739C /* MoneyFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F32120E0370085739C /* MoneyFormat.m */; };
 		B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */; };
 		B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F53211BD7510061BAA0 /* ExchangeService.m */; };
 		B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC8305211F1FE8005FB9B4 /* BritaApi.m */; };
@@ -66,6 +68,10 @@
 		B874E935211D46460087F691 /* CoinTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinTableViewCell.m; sourceTree = "<group>"; };
 		B87BA652211932EA0049C9AE /* CryptoUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoUtils.h; sourceTree = "<group>"; };
 		B87BA653211932EA0049C9AE /* CryptoUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoUtils.m; sourceTree = "<group>"; };
+		B88521EF2120818D0085739C /* FSError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSError.h; sourceTree = "<group>"; };
+		B88521F02120818D0085739C /* FSError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSError.m; sourceTree = "<group>"; };
+		B88521F22120E0370085739C /* MoneyFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyFormat.h; sourceTree = "<group>"; };
+		B88521F32120E0370085739C /* MoneyFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyFormat.m; sourceTree = "<group>"; };
 		B8AB0F4F211BD6FD0061BAA0 /* ExchangeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeViewModel.h; sourceTree = "<group>"; };
 		B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewModel.m; sourceTree = "<group>"; };
 		B8AB0F52211BD7510061BAA0 /* ExchangeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeService.h; sourceTree = "<group>"; };
@@ -179,8 +185,19 @@
 			children = (
 				B87BA652211932EA0049C9AE /* CryptoUtils.h */,
 				B87BA653211932EA0049C9AE /* CryptoUtils.m */,
+				B88521F22120E0370085739C /* MoneyFormat.h */,
+				B88521F32120E0370085739C /* MoneyFormat.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B88521EE2120816A0085739C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				B88521EF2120818D0085739C /* FSError.h */,
+				B88521F02120818D0085739C /* FSError.m */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		B8AB0F4D211BD6BF0061BAA0 /* User */ = {
@@ -226,6 +243,7 @@
 		B8B596972115F870003B1480 /* Digiwallet */ = {
 			isa = PBXGroup;
 			children = (
+				B88521EE2120816A0085739C /* Error */,
 				B8684920211A9BC3000D82C1 /* Api */,
 				B87BA651211932C20049C9AE /* Helper */,
 				B8F2562C2117659A0008C00C /* Services */,
@@ -522,7 +540,9 @@
 				B868491F211A9B9F000D82C1 /* ExchangeViewController.m in Sources */,
 				B8F2562F211796880008C00C /* LoginService.m in Sources */,
 				B8B596D621162E48003B1480 /* LoginViewController.m in Sources */,
+				B88521F42120E0370085739C /* MoneyFormat.m in Sources */,
 				B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */,
+				B88521F12120818D0085739C /* FSError.m in Sources */,
 				B8AC830C211F2F0B005FB9B4 /* CoinPrice.m in Sources */,
 				B8B5969D2115F871003B1480 /* ViewController.m in Sources */,
 				B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */,
