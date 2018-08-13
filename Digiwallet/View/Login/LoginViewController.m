@@ -78,7 +78,8 @@
     if ([[segue identifier] isEqualToString:@"Home"])
     {
         UITabBarController *tabViewController = segue.destinationViewController;
-        ExchangeViewController *viewController = [[tabViewController viewControllers] objectAtIndex:0];
+        UINavigationController *navigationController = [[tabViewController viewControllers] objectAtIndex:0];
+        ExchangeViewController *viewController = [[navigationController viewControllers] objectAtIndex:0];
         viewController.viewModel = [ExchangeViewController createViewModel];
     }
 }

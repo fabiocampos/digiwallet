@@ -14,6 +14,9 @@
 #import "AppDelegate.h"
 #import "FSError.h"
 #import "MoneyFormat.h"
+#import "TradeViewController.h"
+#import "TradeViewModel.h"
+
 @interface ExchangeViewController() <UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -25,6 +28,7 @@
 
     self.coinTableView.dataSource = self;
     self.coinTableView.delegate = self;
+    self.title = @"Digiwallet";
     [NSTimer scheduledTimerWithTimeInterval:3.0f
                                      target:self selector:@selector(animateAvailableAmount) userInfo:nil repeats:YES];
     [self animateAvailableAmount];
@@ -45,7 +49,7 @@
         [UIView animateWithDuration:0.6 animations:^(void) {
             [self showUserCoin];
         }];
-    }];
+    }];    
 }
 
 - (void)showUserCoin{
@@ -75,6 +79,12 @@
     return 200;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.viewModel.selectedCoin = [self.viewModel.coinPrices objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"Trade" sender:self];
+}
+
 #pragma TableViewDataSource
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CoinData"];
@@ -85,5 +95,16 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewModel.coinPrices count];
+}
+
+#pragma mark - Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"Trade"])
+    {
+        TradeViewModel *tradeViewMode = [[TradeViewModel alloc] initWithServices:self.viewModel.exchangeService andUser:self.viewModel.currentUser toTrade:self.viewModel.selectedCoin];
+        TradeViewController *viewController = segue.destinationViewController;
+        viewController.viewModel = tradeViewMode;
+    }
 }
 @end

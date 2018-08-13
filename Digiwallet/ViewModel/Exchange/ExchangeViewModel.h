@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray<CoinPrice *> *coinPrices;
 @property (strong, nonatomic) ExchangeService *exchangeService;
 @property (strong, nonatomic) User *currentUser;
+@property (strong, nonatomic) CoinPrice *selectedCoin;
 - (instancetype)initWithServices:(ExchangeService *)exchangeService;
 - (RACSignal *)executeGetBitcoinPriceSignal;
 - (RACSignal *)executeGetBritaPriceSignal;

@@ -13,6 +13,9 @@
 		B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B87BA653211932EA0049C9AE /* CryptoUtils.m */; };
 		B88521F12120818D0085739C /* FSError.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F02120818D0085739C /* FSError.m */; };
 		B88521F42120E0370085739C /* MoneyFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F32120E0370085739C /* MoneyFormat.m */; };
+		B88521F82120EA670085739C /* TradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F72120EA670085739C /* TradeViewController.m */; };
+		B88521FC2120EB9E0085739C /* TradeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521FB2120EB9E0085739C /* TradeViewModel.m */; };
+		B88521FF21210D900085739C /* MoneyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521FE21210D900085739C /* MoneyTextField.m */; };
 		B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */; };
 		B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F53211BD7510061BAA0 /* ExchangeService.m */; };
 		B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC8305211F1FE8005FB9B4 /* BritaApi.m */; };
@@ -72,6 +75,12 @@
 		B88521F02120818D0085739C /* FSError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSError.m; sourceTree = "<group>"; };
 		B88521F22120E0370085739C /* MoneyFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyFormat.h; sourceTree = "<group>"; };
 		B88521F32120E0370085739C /* MoneyFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyFormat.m; sourceTree = "<group>"; };
+		B88521F62120EA670085739C /* TradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeViewController.h; sourceTree = "<group>"; };
+		B88521F72120EA670085739C /* TradeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewController.m; sourceTree = "<group>"; };
+		B88521FA2120EB9E0085739C /* TradeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeViewModel.h; sourceTree = "<group>"; };
+		B88521FB2120EB9E0085739C /* TradeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewModel.m; sourceTree = "<group>"; };
+		B88521FD21210D900085739C /* MoneyTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyTextField.h; sourceTree = "<group>"; };
+		B88521FE21210D900085739C /* MoneyTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyTextField.m; sourceTree = "<group>"; };
 		B8AB0F4F211BD6FD0061BAA0 /* ExchangeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeViewModel.h; sourceTree = "<group>"; };
 		B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewModel.m; sourceTree = "<group>"; };
 		B8AB0F52211BD7510061BAA0 /* ExchangeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeService.h; sourceTree = "<group>"; };
@@ -187,6 +196,8 @@
 				B87BA653211932EA0049C9AE /* CryptoUtils.m */,
 				B88521F22120E0370085739C /* MoneyFormat.h */,
 				B88521F32120E0370085739C /* MoneyFormat.m */,
+				B88521FD21210D900085739C /* MoneyTextField.h */,
+				B88521FE21210D900085739C /* MoneyTextField.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -198,6 +209,24 @@
 				B88521F02120818D0085739C /* FSError.m */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		B88521F52120EA4E0085739C /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				B88521F62120EA670085739C /* TradeViewController.h */,
+				B88521F72120EA670085739C /* TradeViewController.m */,
+			);
+			path = Trade;
+			sourceTree = "<group>";
+		};
+		B88521F92120EB860085739C /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				B88521FA2120EB9E0085739C /* TradeViewModel.h */,
+				B88521FB2120EB9E0085739C /* TradeViewModel.m */,
+			);
+			path = Trade;
 			sourceTree = "<group>";
 		};
 		B8AB0F4D211BD6BF0061BAA0 /* User */ = {
@@ -285,6 +314,7 @@
 		B8B596CD21162ABB003B1480 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B88521F92120EB860085739C /* Trade */,
 				B8AB0F4E211BD6D40061BAA0 /* Exchange */,
 				B8AB0F4D211BD6BF0061BAA0 /* User */,
 			);
@@ -305,6 +335,7 @@
 		B8B596CF21162B27003B1480 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B88521F52120EA4E0085739C /* Trade */,
 				B868491C211A9B71000D82C1 /* Exchange */,
 				B8B596D321162E04003B1480 /* Login */,
 			);
@@ -534,6 +565,7 @@
 				B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */,
 				B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */,
 				B8F2562B211762890008C00C /* User.m in Sources */,
+				B88521FC2120EB9E0085739C /* TradeViewModel.m in Sources */,
 				B8B596A32115F871003B1480 /* Digiwallet.xcdatamodeld in Sources */,
 				B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */,
 				B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */,
@@ -542,11 +574,13 @@
 				B8B596D621162E48003B1480 /* LoginViewController.m in Sources */,
 				B88521F42120E0370085739C /* MoneyFormat.m in Sources */,
 				B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */,
+				B88521F82120EA670085739C /* TradeViewController.m in Sources */,
 				B88521F12120818D0085739C /* FSError.m in Sources */,
 				B8AC830C211F2F0B005FB9B4 /* CoinPrice.m in Sources */,
 				B8B5969D2115F871003B1480 /* ViewController.m in Sources */,
 				B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */,
 				B8B596AB2115F881003B1480 /* main.m in Sources */,
+				B88521FF21210D900085739C /* MoneyTextField.m in Sources */,
 				B8B5969A2115F871003B1480 /* AppDelegate.m in Sources */,
 				B87BA654211932EA0049C9AE /* CryptoUtils.m in Sources */,
 			);
