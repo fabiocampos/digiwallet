@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B84C8BA5212276E300B95E21 /* ReceiptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B84C8BA4212276E300B95E21 /* ReceiptTableViewCell.m */; };
 		B868491F211A9B9F000D82C1 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B868491E211A9B9F000D82C1 /* ExchangeViewController.m */; };
 		B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8684922211A9BE7000D82C1 /* BitcoinApi.m */; };
 		B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B874E935211D46460087F691 /* CoinTableViewCell.m */; };
@@ -16,6 +17,9 @@
 		B88521F82120EA670085739C /* TradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521F72120EA670085739C /* TradeViewController.m */; };
 		B88521FC2120EB9E0085739C /* TradeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521FB2120EB9E0085739C /* TradeViewModel.m */; };
 		B88521FF21210D900085739C /* MoneyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B88521FE21210D900085739C /* MoneyTextField.m */; };
+		B885220221212A160085739C /* Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = B885220121212A160085739C /* Operation.m */; };
+		B88522062121447B0085739C /* ReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88522052121447B0085739C /* ReceiptViewController.m */; };
+		B885220A212144E30085739C /* ReceiptViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8852209212144E30085739C /* ReceiptViewModel.m */; };
 		B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */; };
 		B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AB0F53211BD7510061BAA0 /* ExchangeService.m */; };
 		B8AC8306211F1FE8005FB9B4 /* BritaApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AC8305211F1FE8005FB9B4 /* BritaApi.m */; };
@@ -63,6 +67,8 @@
 		7006ADFFFA6CDE78131D4DAB /* Pods-Digiwallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digiwallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digiwallet/Pods-Digiwallet.release.xcconfig"; sourceTree = "<group>"; };
 		818081047FC078246C4CE245 /* Pods-DigiwalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletTests/Pods-DigiwalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DAA8DD9BD897E111C39C5BF /* Pods-DigiwalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiwalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DigiwalletUITests/Pods-DigiwalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B84C8BA3212276E300B95E21 /* ReceiptTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiptTableViewCell.h; sourceTree = "<group>"; };
+		B84C8BA4212276E300B95E21 /* ReceiptTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptTableViewCell.m; sourceTree = "<group>"; };
 		B868491D211A9B9F000D82C1 /* ExchangeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeViewController.h; sourceTree = "<group>"; };
 		B868491E211A9B9F000D82C1 /* ExchangeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
 		B8684921211A9BE7000D82C1 /* BitcoinApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BitcoinApi.h; sourceTree = "<group>"; };
@@ -81,6 +87,12 @@
 		B88521FB2120EB9E0085739C /* TradeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewModel.m; sourceTree = "<group>"; };
 		B88521FD21210D900085739C /* MoneyTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneyTextField.h; sourceTree = "<group>"; };
 		B88521FE21210D900085739C /* MoneyTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoneyTextField.m; sourceTree = "<group>"; };
+		B885220021212A160085739C /* Operation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Operation.h; sourceTree = "<group>"; };
+		B885220121212A160085739C /* Operation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Operation.m; sourceTree = "<group>"; };
+		B88522042121447B0085739C /* ReceiptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiptViewController.h; sourceTree = "<group>"; };
+		B88522052121447B0085739C /* ReceiptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewController.m; sourceTree = "<group>"; };
+		B8852208212144E30085739C /* ReceiptViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiptViewModel.h; sourceTree = "<group>"; };
+		B8852209212144E30085739C /* ReceiptViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiptViewModel.m; sourceTree = "<group>"; };
 		B8AB0F4F211BD6FD0061BAA0 /* ExchangeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeViewModel.h; sourceTree = "<group>"; };
 		B8AB0F50211BD6FD0061BAA0 /* ExchangeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewModel.m; sourceTree = "<group>"; };
 		B8AB0F52211BD7510061BAA0 /* ExchangeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExchangeService.h; sourceTree = "<group>"; };
@@ -159,6 +171,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B84C8BA2212276C700B95E21 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B84C8BA3212276E300B95E21 /* ReceiptTableViewCell.h */,
+				B84C8BA4212276E300B95E21 /* ReceiptTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B868491C211A9B71000D82C1 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +248,25 @@
 				B88521FB2120EB9E0085739C /* TradeViewModel.m */,
 			);
 			path = Trade;
+			sourceTree = "<group>";
+		};
+		B8852203212144640085739C /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				B84C8BA2212276C700B95E21 /* Cell */,
+				B88522042121447B0085739C /* ReceiptViewController.h */,
+				B88522052121447B0085739C /* ReceiptViewController.m */,
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		B8852207212144CF0085739C /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				B8852208212144E30085739C /* ReceiptViewModel.h */,
+				B8852209212144E30085739C /* ReceiptViewModel.m */,
+			);
+			path = Receipt;
 			sourceTree = "<group>";
 		};
 		B8AB0F4D211BD6BF0061BAA0 /* User */ = {
@@ -314,6 +354,7 @@
 		B8B596CD21162ABB003B1480 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B8852207212144CF0085739C /* Receipt */,
 				B88521F92120EB860085739C /* Trade */,
 				B8AB0F4E211BD6D40061BAA0 /* Exchange */,
 				B8AB0F4D211BD6BF0061BAA0 /* User */,
@@ -328,6 +369,8 @@
 				B8F2562A211762890008C00C /* User.m */,
 				B8AC830A211F2F0B005FB9B4 /* CoinPrice.h */,
 				B8AC830B211F2F0B005FB9B4 /* CoinPrice.m */,
+				B885220021212A160085739C /* Operation.h */,
+				B885220121212A160085739C /* Operation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +378,7 @@
 		B8B596CF21162B27003B1480 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B8852203212144640085739C /* Receipt */,
 				B88521F52120EA4E0085739C /* Trade */,
 				B868491C211A9B71000D82C1 /* Exchange */,
 				B8B596D321162E04003B1480 /* Login */,
@@ -567,6 +611,7 @@
 				B8F2562B211762890008C00C /* User.m in Sources */,
 				B88521FC2120EB9E0085739C /* TradeViewModel.m in Sources */,
 				B8B596A32115F871003B1480 /* Digiwallet.xcdatamodeld in Sources */,
+				B885220A212144E30085739C /* ReceiptViewModel.m in Sources */,
 				B8AB0F51211BD6FD0061BAA0 /* ExchangeViewModel.m in Sources */,
 				B874E936211D46460087F691 /* CoinTableViewCell.m in Sources */,
 				B868491F211A9B9F000D82C1 /* ExchangeViewController.m in Sources */,
@@ -574,11 +619,14 @@
 				B8B596D621162E48003B1480 /* LoginViewController.m in Sources */,
 				B88521F42120E0370085739C /* MoneyFormat.m in Sources */,
 				B8684923211A9BE7000D82C1 /* BitcoinApi.m in Sources */,
+				B84C8BA5212276E300B95E21 /* ReceiptTableViewCell.m in Sources */,
 				B88521F82120EA670085739C /* TradeViewController.m in Sources */,
 				B88521F12120818D0085739C /* FSError.m in Sources */,
 				B8AC830C211F2F0B005FB9B4 /* CoinPrice.m in Sources */,
+				B88522062121447B0085739C /* ReceiptViewController.m in Sources */,
 				B8B5969D2115F871003B1480 /* ViewController.m in Sources */,
 				B8AB0F54211BD7510061BAA0 /* ExchangeService.m in Sources */,
+				B885220221212A160085739C /* Operation.m in Sources */,
 				B8B596AB2115F881003B1480 /* main.m in Sources */,
 				B88521FF21210D900085739C /* MoneyTextField.m in Sources */,
 				B8B5969A2115F871003B1480 /* AppDelegate.m in Sources */,

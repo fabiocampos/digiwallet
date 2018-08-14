@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "ExchangeViewController.h"
-
+#import "ReceiptViewController.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -81,6 +81,8 @@
         UINavigationController *navigationController = [[tabViewController viewControllers] objectAtIndex:0];
         ExchangeViewController *viewController = [[navigationController viewControllers] objectAtIndex:0];
         viewController.viewModel = [ExchangeViewController createViewModel];
+        ReceiptViewController *receiptViewController = [[tabViewController viewControllers] objectAtIndex:1];
+        receiptViewController.viewModel = [ReceiptViewController createViewModel];
     }
 }
 

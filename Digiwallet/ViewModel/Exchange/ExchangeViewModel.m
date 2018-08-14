@@ -20,17 +20,6 @@ int displayableUserCoinIndex = 0;
         _exchangeService = exchangeService;
         _coinPrices = [[NSMutableArray alloc] init];
     }
-    
-//    self.executeGetBitCoinPrice=
-//    [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-//                                return  [self executeGetBitcoinPriceSignal];
-//    }];
-//    
-//    self.executeGetBritaPrice=
-//    [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-//        return  [self executeGetBritaPriceSignal];
-//    }];
-
     return self;
 }
 

@@ -13,9 +13,15 @@ typedef enum CoinTypes : NSUInteger {
     kBRL
 } CoinTypes;
 
+typedef enum TradeTypes : NSUInteger {
+    kBuy,
+    kSell
+} TradeTypes;
+
 @interface CoinPrice : NSObject
 @property (strong, nonatomic) NSNumber  *buyValue;
 @property (strong, nonatomic) NSNumber  *sellValue;
+@property (strong, nonatomic) NSNumber  *tradeAmount;
 @property enum CoinTypes type;
 @property (strong, nonatomic) NSString  *name;
 @end

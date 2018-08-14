@@ -28,17 +28,22 @@
 
     self.coinTableView.dataSource = self;
     self.coinTableView.delegate = self;
-    self.title = @"Digiwallet";
+    self.title = @"Home";
     [NSTimer scheduledTimerWithTimeInterval:3.0f
                                      target:self selector:@selector(animateAvailableAmount) userInfo:nil repeats:YES];
     [self animateAvailableAmount];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.viewModel.coinPrices = [[NSMutableArray alloc] init];
     [[self.viewModel executeGetBritaPriceSignal] subscribeNext:^(id  _Nullable x) {
         [self.coinTableView reloadData];
     }];
     [[self.viewModel executeGetBitcoinPriceSignal] subscribeNext:^(id  _Nullable x) {
         [self.coinTableView reloadData];
     }];
-
 }
 
 - (void)animateAvailableAmount {
@@ -54,7 +59,7 @@
 
 - (void)showUserCoin{
     CoinPrice *coin = [self.viewModel getDisplayableUserCoin];
-    NSString *moneyMask = @"R$";
+    NSString *moneyMask = [MoneyFormat getCoinMask:coin.type];
     self.availableAmount.text = [MoneyFormat formatMoney:coin.sellValue withMask:moneyMask];
     self.availableAmount.alpha = 1;
     self.availableAmountName.text = coin.name;

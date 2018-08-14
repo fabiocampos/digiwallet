@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TradeViewModel.h"
+#import "MoneyTextField.h"
 
 @interface TradeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIPickerView *walletCurrencyPicker;
 @property (weak, nonatomic) IBOutlet UIButton *walletCoinButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *walletPickerHeightConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *walletCoinValue;
-@property (weak, nonatomic) IBOutlet UITextField *amountInputValue;
+@property (weak, nonatomic) IBOutlet MoneyTextField *amountInputValue;
 @property (weak, nonatomic) IBOutlet UIButton *performOperationButton;
 @property (weak, nonatomic) IBOutlet UILabel *operationValueLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *operationSegmentedControl;

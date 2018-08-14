@@ -17,7 +17,6 @@
 - (instancetype)initWithBitcoinApi:(BitcoinApi *)bitcoinApi andBritaApi:(BritaApi *)britaApi;
 - (RACSignal *) getBitcoinPrice;
 - (RACSignal *) getBritaPrice;
-- (RACSignal *) buyBitcoinforUser:(User *)user;
-- (RACSignal *) sellCoin:(CoinPrice*)coinPrice forUser:(User *)user;
+- (RACSignal *)performTradeOperation:(CoinPrice *)coin forCoin:(CoinPrice *)coin ofType:(TradeTypes)type forUser:(User *)user;
 @end
 

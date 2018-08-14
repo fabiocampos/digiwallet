@@ -15,9 +15,8 @@
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *myNumber = [formatter numberFromString: [textField.text stringByAppendingString:string]];
+    NSString *inputToParse = [textField.text stringByAppendingString:string];
+    NSNumber *myNumber = [self getNumberFrom:inputToParse];
     NSString *trimmedString = [string stringByTrimmingCharactersInSet:
                                [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if(range.length == 1 ||([trimmedString length] > 0 && myNumber != nil)){
@@ -25,6 +24,17 @@
     }
     
     return NO;
+}
+
+-(NSNumber*) getInputValue{
+    return [self getNumberFrom:self.text];
+}
+
+-(NSNumber*) getNumberFrom:(NSString*)text{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *myNumber = [formatter numberFromString:text];
+    return myNumber;
 }
 
 @end
