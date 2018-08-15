@@ -117,7 +117,7 @@
     if(type == kSell){
         tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.sellValue doubleValue] / [fromCoin.sellValue doubleValue]);
     }else{
-        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.buyValue doubleValue]/ [fromCoin.sellValue doubleValue]);
+        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.buyValue doubleValue] / [fromCoin.buyValue doubleValue]);
     }
     return [[NSDecimalNumber alloc] initWithDouble:tradeAmount];
 }
