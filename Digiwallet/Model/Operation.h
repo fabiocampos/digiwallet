@@ -16,8 +16,8 @@ typedef enum OperationTypes : NSInteger {
 
 @interface Operation : RLMObject
 @property NSString *userEmail;
-@property NSNumber<RLMFloat> *value;
-@property NSNumber<RLMFloat> *usedValue;
+@property NSNumber<RLMDouble> *value;
+@property NSNumber<RLMDouble> *usedValue;
 @property NSString *type;
 @property NSString *fromCoin;
 @property NSString *toCoin;

@@ -14,10 +14,12 @@
 }
 
 - (void)initLayout:(Operation*)operation {
-     NSString *moneyMask = @"R$";
-    [self.toCoinValue setText:[MoneyFormat formatMoney:operation.value withMask:moneyMask]];
+    NSString *fromMoneyMask = [MoneyFormat getCoinMaskByName:operation.fromCoin];
+    NSString *toMoneyMask = [MoneyFormat getCoinMaskByName:operation.toCoin];
+   
+    [self.toCoinValue setText:[MoneyFormat formatMoney:operation.value withMask:toMoneyMask]];
     [self.toCoinLabel setText:operation.toCoin];
-    [self.fromCoinValue setText:[MoneyFormat formatMoney:operation.usedValue withMask:moneyMask]];
+    [self.fromCoinValue setText:[MoneyFormat formatMoney:operation.usedValue withMask:fromMoneyMask]];
     [self.fromCoinLabel setText:operation.fromCoin];
  
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];

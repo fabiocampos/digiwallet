@@ -115,7 +115,7 @@ bool isWalletPickerOpen = false;
         return;
     }
     
-    [[self.viewModel performTradeOperation: [self.amountInputValue getInputValue]] subscribeNext:^(id  _Nullable x) {
+    [[self.viewModel performTradeOperation: inputValue] subscribeNext:^(id  _Nullable x) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sucesso" message:@"Transação realizada" preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {

@@ -15,12 +15,13 @@
     operation.fromCoin = [MoneyFormat getCoinName:coin.type];
     operation.toCoin = [MoneyFormat getCoinName:requestedCoin.type];
     if(type == kBuy){
-        operation.value = [MoneyFormat truncateMoney:requestedCoin.tradeAmount];
-        operation.usedValue = [MoneyFormat truncateMoney:coin.tradeAmount];
+        operation.value = requestedCoin.tradeAmount;
+        
+        operation.usedValue = coin.tradeAmount;
         operation.type = @"Compra";
     }else{
-        operation.value = [MoneyFormat truncateMoney:requestedCoin.tradeAmount];
-        operation.usedValue = [MoneyFormat truncateMoney:coin.tradeAmount];
+        operation.value = requestedCoin.tradeAmount;
+        operation.usedValue = coin.tradeAmount;
         operation.type = @"Venda";
     }
     operation.date = [NSDate date];

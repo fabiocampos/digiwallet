@@ -51,17 +51,17 @@ int displayableUserCoinIndex = 0;
      CoinPrice *coin = [[CoinPrice alloc] init];
     switch (displayableUserCoinIndex) {
         case 0:
-            coin.sellValue = _currentUser.balance;
+            coin.tradeAmount = [[NSDecimalNumber alloc] initWithDouble:[self.currentUser.balance doubleValue]];
             coin.type = kBRL;
             coin.name = @"Reais";
             break;
         case 1:
-            coin.sellValue = _currentUser.britaBalance;
+            coin.tradeAmount = [[NSDecimalNumber alloc] initWithDouble:[self.currentUser.britaBalance doubleValue]];
             coin.type = kBrita;
             coin.name = @"Brita";
             break;
         case 2:
-            coin.sellValue = _currentUser.bitcoinBalance;
+            coin.tradeAmount = [[NSDecimalNumber alloc] initWithDouble:[self.currentUser.bitcoinBalance doubleValue]];
             coin.type = kBitcoin;
             coin.name = @"Bitcoin";
             break;

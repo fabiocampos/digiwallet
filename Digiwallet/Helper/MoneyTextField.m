@@ -31,10 +31,9 @@
 }
 
 -(NSNumber*) getNumberFrom:(NSString*)text{
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *myNumber = [formatter numberFromString:text];
-    return myNumber;
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    return [numberFormatter numberFromString:text];
 }
 
 @end

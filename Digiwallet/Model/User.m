@@ -16,7 +16,7 @@
     User *user = [[User alloc] init];
     user.auth = [CryptoUtils toSha256:password];
     user.email = email;
-    user.balance = [[NSNumber alloc] initWithFloat:100000.00];
+    user.balance = [NSNumber numberWithDouble:100000.00];
     
     [realm transactionWithBlock:^{
         [realm addObject:user];

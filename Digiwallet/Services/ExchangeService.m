@@ -58,21 +58,76 @@
 
 
 - (RACSignal *) performTradeOperation:(CoinPrice *)fromCoin forCoin:(CoinPrice *)requestedCoin ofType:(TradeTypes)type forUser:(User *)user{
-    return [self updateWalletOfUser:(User *)user from:(CoinPrice *)fromCoin to:(CoinPrice *)requestedCoin ofType:type];
+     return [RACSignal createSignal:^RACDisposable *(id subscriber) {
+         if(type == kSell &&
+            ![self canPerformSellOperation:user forRequiredCoin:requestedCoin withAmount:[fromCoin.tradeAmount doubleValue]])
+         {
+             [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSNotEnoughtMoney userInfo:nil] ];
+             [subscriber sendCompleted];
+             
+             return nil;
+         }
+    [[self getLatestPriceFor:fromCoin] subscribeNext:^(CoinPrice *updatedFromCoin) {
+        [[self getLatestPriceFor:requestedCoin] subscribeNext:^(CoinPrice *updatedRequestedCoin) {
+            updatedFromCoin.tradeAmount = fromCoin.tradeAmount;
+            updatedRequestedCoin.tradeAmount = requestedCoin.tradeAmount;
+            updatedFromCoin.tradeAmount = [self calculateTradeAmountOf:updatedFromCoin to:updatedRequestedCoin for:type];
+            updatedRequestedCoin.tradeAmount = [self calculateTradeAmountOf:updatedRequestedCoin to:updatedFromCoin for:type];
+            
+            [[self updateWalletOfUser:user from:updatedFromCoin to:updatedRequestedCoin ofType:type] subscribeNext:^(id  _Nullable x) {
+                [subscriber sendNext:x];
+                [subscriber sendCompleted];
+            } error:^(NSError * _Nullable error) {
+                [subscriber sendError:error];
+                [subscriber sendCompleted];
+            }];
+        } error:^(NSError * _Nullable error) {
+            [subscriber sendError:error];
+            [subscriber sendCompleted];
+        }];
+        
+    } error:^(NSError * _Nullable error) {
+        [subscriber sendError:error];
+        [subscriber sendCompleted];
+    }];
+    
+         return nil;
+    }];
 }
 
+- (RACSignal *) getLatestPriceFor:(CoinPrice *)coin{
+    switch (coin.type) {
+        case kBrita:
+            return [self getBritaPrice];
+            break;
+        case kBitcoin:
+            return [self getBitcoinPrice];
+            break;
+        default:
+            return [RACSignal createSignal:^RACDisposable *(id subscriber) {
+                 [subscriber sendNext:coin];
+                 [subscriber sendCompleted];
+                return nil;
+             }];
+            break;
+    }
+}
+- (NSDecimalNumber*)calculateTradeAmountOf:(CoinPrice*)fromCoin to:(CoinPrice*)coin for:(TradeTypes)type{
+    double tradeAmount;
+    if(type == kSell){
+        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.sellValue doubleValue] / [fromCoin.sellValue doubleValue]);
+    }else{
+        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.buyValue doubleValue] / [fromCoin.buyValue doubleValue]);
+    }
+    return [[NSDecimalNumber alloc] initWithDouble:tradeAmount];
+}
 
 - (RACSignal *) updateWalletOfUser:(User *)user from:(CoinPrice *)fromCoin to:(CoinPrice *)requestedCoin ofType:(TradeTypes)type{
    return [RACSignal createSignal:^RACDisposable *(id subscriber) {
-    fromCoin.tradeAmount = requestedCoin.tradeAmount;
-    if(type == kSell){
-        fromCoin.buyValue = fromCoin.tradeAmount;
-    }else{
-       fromCoin.sellValue = fromCoin.tradeAmount;
-    }
+
+       
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
-        
         [[self adjustBalanceOfUser:user using:fromCoin operationOfType:type adjusting: type == kSell ? kCredit:kDebit ] subscribeNext:^(id  _Nullable x) {
         [[self adjustBalanceOfUser:user using:requestedCoin operationOfType:type adjusting: type == kSell ? kDebit:kCredit ] subscribeNext:^(id  _Nullable x) {
             Operation *operation;
@@ -82,15 +137,18 @@
                  operation = [Operation createOperationForUser:user.email fromCoin:fromCoin toCoin:requestedCoin ofType:type];
             }
             [realm addObject:operation];
+             [realm commitWriteTransaction];
             [subscriber sendNext:operation];
             [subscriber sendCompleted];
         } error:^(NSError * _Nullable error) {
             [subscriber sendError:error];
             [subscriber sendCompleted];
+             [realm cancelWriteTransaction];
         }];
     } error:^(NSError * _Nullable error) {
         [subscriber sendError:error];
         [subscriber sendCompleted];
+        [realm cancelWriteTransaction];
     }];
        }];
        
@@ -101,37 +159,32 @@
 
 - (RACSignal *) adjustBalanceOfUser:(User *)user using:(CoinPrice *)coin operationOfType:(TradeTypes)type adjusting:(OperationTypes)adjustmentType{
     return [RACSignal createSignal:^RACDisposable *(id subscriber) {
-    float balanceToUpdate = [coin.tradeAmount floatValue];
-//    if(type == kSell){
-//        balanceToUpdate = [coin.sellValue floatValue];
-//    }else{
-//        balanceToUpdate = [coin.buyValue floatValue];
-//    }
+    NSDecimalNumber *balanceToUpdate = coin.tradeAmount;
     if(adjustmentType == kDebit){
-        balanceToUpdate = -balanceToUpdate;
+        balanceToUpdate = [balanceToUpdate decimalNumberByMultiplyingBy:[[NSDecimalNumber alloc] initWithInt:-1]];
     }
     if(coin.type == kBRL){
-        float brlBalance = [user.balance floatValue] + balanceToUpdate;
-        if(type == kSell || [self canPerformBuyOperation:brlBalance]){
-            user.balance =  [NSNumber numberWithFloat:brlBalance];
+        NSDecimalNumber *balance = [balanceToUpdate decimalNumberByAdding:[[NSDecimalNumber alloc] initWithDouble:[user.balance doubleValue]]];
+         if(type == kSell || [self canPerformBuyOperation:[balance floatValue]]){
+             user.balance = balance;
         }else{
             NSLog(@"Not enougth brl");
             [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSNotEnoughtMoney userInfo:nil] ];
             [subscriber sendCompleted];
         }
      }else if(coin.type == kBrita){
-         float britaBalance = [user.britaBalance floatValue] + balanceToUpdate;
-         if(type == kSell || [self canPerformBuyOperation:britaBalance]){
-             user.britaBalance =  [NSNumber numberWithFloat:britaBalance];
+         NSDecimalNumber *balance  = [balanceToUpdate decimalNumberByAdding:[[NSDecimalNumber alloc] initWithDouble:[user.britaBalance doubleValue]]];
+         if(type == kSell || [self canPerformBuyOperation:[balance floatValue]]){
+             user.britaBalance = balance;
          }else{
              NSLog(@"Not enougth britas");
              [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSNotEnoughtMoney userInfo:nil] ];
              [subscriber sendCompleted];
          }
     }else{
-        float bitCoinBalance = [user.bitcoinBalance floatValue] + balanceToUpdate;
-        if(type == kSell || [self canPerformBuyOperation:bitCoinBalance]){
-         user.bitcoinBalance =  [NSNumber numberWithFloat:bitCoinBalance];
+        NSDecimalNumber *balance  = [balanceToUpdate decimalNumberByAdding:[[NSDecimalNumber alloc] initWithDouble:[user.bitcoinBalance doubleValue]]];
+        if(type == kSell || [self canPerformBuyOperation:[balance floatValue]]){
+            user.bitcoinBalance = balance;
         }else{
             NSLog(@"Not enougth bitcoins");
             [subscriber sendError:[NSError errorWithDomain:FSDigiwalletDomain code:FSNotEnoughtMoney userInfo:nil] ];
@@ -146,6 +199,26 @@
 
 -(bool)canPerformBuyOperation:(float)balance{
     if(balance < 0){
+        return NO;
+    }
+    return YES;
+}
+
+-(bool)canPerformSellOperation:(User*)user forRequiredCoin:(CoinPrice*)requiredCoin withAmount:(double)amount{
+    double userBalance;
+    double requiredAmount = [requiredCoin.sellValue doubleValue] * amount;
+    
+    switch (requiredCoin.type) {
+        case kBrita:
+            userBalance = [user.britaBalance doubleValue];
+            break;
+        case kBitcoin:
+            userBalance = [user.bitcoinBalance doubleValue];
+            break;
+        default:
+            userBalance = [user.balance doubleValue];
+    }
+    if(requiredAmount > userBalance){
         return NO;
     }
     return YES;
