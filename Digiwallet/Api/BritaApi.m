@@ -38,8 +38,8 @@ NSString *const DAILY_COTATION_ENDPOINT = @"CotacaoMoedaDia(moeda=@moeda,dataCot
         if(responseObject != nil && [[responseObject objectForKey:@"value"] count] > 0){
             CoinPrice *britaPrice = [[CoinPrice alloc] init];
             NSInteger latestIndext = [responseObject[@"value"] count] - 1;
-            britaPrice.buyValue = responseObject[@"value"][latestIndext][@"cotacaoCompra"];
-            britaPrice.sellValue = responseObject[@"value"][latestIndext][@"cotacaoVenda"];
+            britaPrice.buyValue = responseObject[@"value"][latestIndext][@"cotacaoVenda"];
+            britaPrice.sellValue = responseObject[@"value"][latestIndext][@"cotacaoCompra"];
             britaPrice.type = kBrita;
             britaPrice.name = @"Brita";
             success(britaPrice);
@@ -64,10 +64,10 @@ NSString *const DAILY_COTATION_ENDPOINT = @"CotacaoMoedaDia(moeda=@moeda,dataCot
                                    fromDate:cotationDate];
     NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:cotationDate];
     NSInteger hour = [components hour];
-    if(weekday == 1){
+    if(weekday == 1 || (hour >=0 && hour <= 10)){
         [dateComponents setDay:-2];
         cotationDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:cotationDate options:0];
-    }else if(weekday == 7 || (hour >=0 && hour <= 10)){
+    }else if(weekday == 7){
         [dateComponents setDay:-1];
         cotationDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:cotationDate options:0];
     }

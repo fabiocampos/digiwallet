@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 @interface MoneyFormat : NSObject
 + (NSString*)formatMoney:(NSNumber*)moneyValue withMask:(NSString*)mask;
++ (NSString*)getCoinMaskByName:(NSString*)coinName;
 + (NSNumber*)truncateMoney:(NSNumber*)moneyValue;
 + (UIImage*)getCoinImage:(CoinPrice*)coinPrice;
 + (NSString*)getCoinMask:(CoinTypes)coinType;

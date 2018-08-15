@@ -16,7 +16,7 @@
         [numberFormatter setCurrencyCode:mask];
         [numberFormatter setMaximumFractionDigits:3];
         [numberFormatter setRoundingMode:NSNumberFormatterRoundUp];
-        NSString *numberAsString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:[moneyValue floatValue]]];
+        NSString *numberAsString = [numberFormatter stringFromNumber:[NSDecimalNumber numberWithDouble:[moneyValue doubleValue]]];
 
         return numberAsString;
 }
@@ -26,7 +26,8 @@
     [numberFormatter setNumberStyle: NSNumberFormatterDecimalStyle];
     [numberFormatter setMaximumFractionDigits:3];
     [numberFormatter setRoundingMode:NSNumberFormatterRoundUp];
-    NSString *numberAsString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:[moneyValue floatValue]]];
+    NSString *numberAsString = [numberFormatter stringFromNumber:[NSDecimalNumber numberWithDouble:[moneyValue doubleValue]]];
+   // NSDecimalNumber *cow = [NSDecimalNumber decimalNumberWithString:foo];
     return [numberFormatter numberFromString:numberAsString];
 }
 
@@ -54,12 +55,24 @@
             mask = @"BTC";
             break;
         case kBrita:
-            mask = @"R$";
+            mask = @"X$";
             break;
             
         default:
             mask = @"R$";
             break;
+    }
+    return mask;
+}
+
++ (NSString*)getCoinMaskByName:(NSString*)coinName{
+    NSString *mask;
+    if([coinName isEqualToString:@"Brita"]){
+        mask = @"X$";
+    }else if([coinName isEqualToString:@"Bitcoin"]){
+        mask = @"BTC";
+    }else{
+        mask = @"R$";
     }
     return mask;
 }

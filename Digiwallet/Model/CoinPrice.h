@@ -19,9 +19,9 @@ typedef enum TradeTypes : NSUInteger {
 } TradeTypes;
 
 @interface CoinPrice : NSObject
-@property (strong, nonatomic) NSNumber  *buyValue;
-@property (strong, nonatomic) NSNumber  *sellValue;
-@property (strong, nonatomic) NSNumber  *tradeAmount;
+@property (strong, nonatomic) NSDecimalNumber  *buyValue;
+@property (strong, nonatomic) NSDecimalNumber  *sellValue;
+@property (strong, nonatomic) NSDecimalNumber  *tradeAmount;
 @property enum CoinTypes type;
 @property (strong, nonatomic) NSString  *name;
 @end

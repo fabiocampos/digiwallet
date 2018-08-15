@@ -60,7 +60,7 @@
 - (void)showUserCoin{
     CoinPrice *coin = [self.viewModel getDisplayableUserCoin];
     NSString *moneyMask = [MoneyFormat getCoinMask:coin.type];
-    self.availableAmount.text = [MoneyFormat formatMoney:coin.sellValue withMask:moneyMask];
+    self.availableAmount.text = [MoneyFormat formatMoney:coin.tradeAmount withMask:moneyMask];
     self.availableAmount.alpha = 1;
     self.availableAmountName.text = coin.name;
     self.availableAmountName.alpha = 1;

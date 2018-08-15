@@ -12,9 +12,9 @@
 @interface User : RLMObject
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *auth;
-@property (strong, nonatomic) NSNumber<RLMFloat> *balance;
-@property (strong, nonatomic) NSNumber<RLMFloat> *bitcoinBalance;
-@property (strong, nonatomic) NSNumber<RLMFloat> *britaBalance;
+@property (strong, nonatomic) NSNumber<RLMDouble> *balance;
+@property (strong, nonatomic) NSNumber<RLMDouble> *bitcoinBalance;
+@property (strong, nonatomic) NSNumber<RLMDouble> *britaBalance;
 
 + (User*)createUser:(NSString *)email withPassword:(NSString *)password;
 + (User*)findUser:(NSString *)email;
