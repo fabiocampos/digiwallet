@@ -71,8 +71,7 @@
         [[self getLatestPriceFor:requestedCoin] subscribeNext:^(CoinPrice *updatedRequestedCoin) {
             updatedFromCoin.tradeAmount = fromCoin.tradeAmount;
             updatedRequestedCoin.tradeAmount = requestedCoin.tradeAmount;
-            updatedFromCoin.tradeAmount = [self calculateTradeAmountOf:updatedFromCoin to:updatedRequestedCoin for:type];
-            updatedRequestedCoin.tradeAmount = [self calculateTradeAmountOf:updatedRequestedCoin to:updatedFromCoin for:type];
+            [self setTradeAmountOf:updatedFromCoin and:updatedRequestedCoin for:type];
             
             [[self updateWalletOfUser:user from:updatedFromCoin to:updatedRequestedCoin ofType:type] subscribeNext:^(id  _Nullable x) {
                 [subscriber sendNext:x];
@@ -90,7 +89,6 @@
         [subscriber sendError:error];
         [subscriber sendCompleted];
     }];
-    
          return nil;
     }];
 }
@@ -112,19 +110,20 @@
             break;
     }
 }
-- (NSDecimalNumber*)calculateTradeAmountOf:(CoinPrice*)fromCoin to:(CoinPrice*)coin for:(TradeTypes)type{
-    double tradeAmount;
+- (void)setTradeAmountOf:(CoinPrice*)fromCoin and:(CoinPrice*)toCoin for:(TradeTypes)type{
+    double fromTradeAmount;
     if(type == kSell){
-        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.sellValue doubleValue] / [fromCoin.sellValue doubleValue]);
-    }else{
-        tradeAmount =  [coin.tradeAmount doubleValue] * ([coin.buyValue doubleValue] / [fromCoin.buyValue doubleValue]);
+        fromTradeAmount =  [toCoin.tradeAmount doubleValue] * ([toCoin.sellValue doubleValue] / [fromCoin.buyValue doubleValue]);
+        fromCoin.tradeAmount = [[NSDecimalNumber alloc] initWithDouble:fromTradeAmount];
+      }else{
+        toCoin.tradeAmount =  toCoin.tradeAmount;
+        fromTradeAmount = [toCoin.tradeAmount doubleValue] * ([toCoin.buyValue doubleValue] / [fromCoin.sellValue doubleValue]);
+        fromCoin.tradeAmount = [[NSDecimalNumber alloc] initWithDouble:fromTradeAmount];
     }
-    return [[NSDecimalNumber alloc] initWithDouble:tradeAmount];
 }
 
 - (RACSignal *) updateWalletOfUser:(User *)user from:(CoinPrice *)fromCoin to:(CoinPrice *)requestedCoin ofType:(TradeTypes)type{
    return [RACSignal createSignal:^RACDisposable *(id subscriber) {
-
        
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
@@ -206,7 +205,7 @@
 
 -(bool)canPerformSellOperation:(User*)user forRequiredCoin:(CoinPrice*)requiredCoin withAmount:(double)amount{
     double userBalance;
-    double requiredAmount = [requiredCoin.sellValue doubleValue] * amount;
+    double requiredAmount = [requiredCoin.tradeAmount doubleValue] * amount;
     
     switch (requiredCoin.type) {
         case kBrita:
