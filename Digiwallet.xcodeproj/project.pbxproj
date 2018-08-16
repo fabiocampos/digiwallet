@@ -35,6 +35,7 @@
 		B8B596C02115F882003B1480 /* DigiwalletUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596BF2115F882003B1480 /* DigiwalletUITests.m */; };
 		B8B596D121162CAC003B1480 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D021162CAC003B1480 /* UserViewModel.m */; };
 		B8B596D621162E48003B1480 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B596D521162E48003B1480 /* LoginViewController.m */; };
+		B8D7BF1B2125193300B65D5F /* ExchangeServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D7BF1A2125193300B65D5F /* ExchangeServiceTests.m */; };
 		B8F2562B211762890008C00C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2562A211762890008C00C /* User.m */; };
 		B8F2562F211796880008C00C /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2562E211796880008C00C /* LoginService.m */; };
 		C5313A10925AB40FE358CB7C /* libPods-Digiwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A55BA7401B203B4AC583254 /* libPods-Digiwallet.a */; };
@@ -122,6 +123,7 @@
 		B8B596D221162CBE003B1480 /* UserViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		B8B596D421162E48003B1480 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B8B596D521162E48003B1480 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B8D7BF1A2125193300B65D5F /* ExchangeServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExchangeServiceTests.m; sourceTree = "<group>"; };
 		B8F25629211762890008C00C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B8F2562A211762890008C00C /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B8F2562D211796880008C00C /* LoginService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			children = (
 				B8B596B42115F882003B1480 /* UserViewModelTests.m */,
 				B8B596B62115F882003B1480 /* Info.plist */,
+				B8D7BF1A2125193300B65D5F /* ExchangeServiceTests.m */,
 			);
 			path = DigiwalletTests;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D7BF1B2125193300B65D5F /* ExchangeServiceTests.m in Sources */,
 				B8B596B52115F882003B1480 /* UserViewModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
